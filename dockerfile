@@ -17,4 +17,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 80
 
 # Start the app using the Uvicorn server with Gunicorn workers
-CMD [ "gunicorn", "-c", "gunicorn_conf.py", "-b", "0.0.0.0:80", "src.main:app"]
+# CMD [ "gunicorn", "-c", "gunicorn_conf.py", "-b", "0.0.0.0:80", "src.main:app"]

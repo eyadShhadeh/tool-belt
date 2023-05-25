@@ -1,6 +1,7 @@
 from typing import Union
 from fastapi import FastAPI, Request
 from src.util.log import log_config, CustomizeLogger
+from src.controllers import route_collector
 
 
 def create_app() -> FastAPI:
@@ -14,13 +15,9 @@ def create_app() -> FastAPI:
 app = create_app()
 
 
-@app.get('/custom-logger')
-def customize_logger(request: Request):
-    request.app.logger.info("Here Is Your Info Log")
-    request.app.logger.error("Here Is Your Error Log")
-    return {'data': "Successf"}
+app.include_router(route_collector)
 
 
 @app.get("/")
 async def read_root():
-    return {"likes": 1}
+    return "welcome to tool belt, your perfect Utilities companion :D"

@@ -30,7 +30,7 @@ def get_url():
     return 'postgresql://%s:%s@%s:%s/%s' % (
         os.getenv('PGUSER', 'postgres'),
         os.getenv('PGPASSWORD', 'password'),
-        os.getenv('PGHOST', 'subscription-domain-service-db'),
+        os.getenv('PGHOST', 'tool-belt-db'),
         os.getenv('PGPORT', '5432'),
         os.getenv('PGDATABASE', 'postgres'),
     )
